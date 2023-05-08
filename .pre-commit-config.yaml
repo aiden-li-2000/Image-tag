@@ -1,0 +1,28 @@
+repos:
+- repo: local
+  hooks:
+    - id: black
+      name: black
+      entry: black
+      files: backend/
+      types: [file, python]
+      language: python
+    - id: isort
+      name: isort (python)
+      entry: isort
+      files: backend/
+      types: [python]
+      language: python
+    #- id: pytest
+    #  name: Check pytest unit tests pass
+    #  entry: pipenv run pytest
+    #  pass_filenames: false
+    #  language: system
+    #  types: [python]
+    - id: mypy
+      name: Check mypy static types match
+      entry: mypy . --ignore-missing-imports
+      files: backend/
+      pass_filenames: false
+      language: python
+      types: [python]

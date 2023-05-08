@@ -1,0 +1,61 @@
+INSERT INTO images (name, sizeX, sizeY) VALUES ("Re-Reimu_Thonk_Emote.png", 100, 100);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("Re-reimu_annoyed.jpg", 200, 200);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("Re-reimu_annoyed.png", 100, 100);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("Re-reimu_fml.png", 100, 100);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("Reimu_Coffee.jpg", 480, 480);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("Reimu_Coffee.png", 475, 475);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("Reimu_Coffee_emote.png", 475, 475);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("Reimu_Peek.png", 146, 146);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("Reimu_Thonk.png", 500, 512);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("Reimu_Thonk_Emote.png", 350, 350);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("reimu_annoyed.jpg", 267, 400);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("reimu_annoyed.png", 175, 175);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("reimu_fml.png", 128, 127);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("reimu_sad.png", 309, 309);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("reimu_yawn.jpg", 225, 225);
+INSERT INTO images (name, sizeX, sizeY) VALUES ("reimu_yawn.png", 175, 190);
+
+INSERT INTO tags (name, type) VALUES ("reimu", "character");
+INSERT INTO tags (name, type) VALUES ("touhou", "show");
+INSERT INTO tags (name, type) VALUES ("thonk", "expression");
+INSERT INTO tags (name, type) VALUES ("angery", "expression");
+INSERT INTO tags (name, type) VALUES ("anxious", "expression");
+INSERT INTO tags (name, type) VALUES ("approve", "expression");
+INSERT INTO tags (name, type) VALUES ("comfy", "expression");
+INSERT INTO tags (name, type) VALUES ("concern", "expression");
+INSERT INTO tags (name, type) VALUES ("confusion", "expression");
+INSERT INTO tags (name, type) VALUES ("cringe", "expression");
+INSERT INTO tags (name, type) VALUES ("disapprove", "expression");
+INSERT INTO tags (name, type) VALUES ("disgust", "expression");
+INSERT INTO tags (name, type) VALUES ("disbelief", "expression");
+INSERT INTO tags (name, type) VALUES ("dumb", "expression");
+INSERT INTO tags (name, type) VALUES ("excited", "expression");
+INSERT INTO tags (name, type) VALUES ("embarassed", "expression");
+INSERT INTO tags (name, type) VALUES ("happy", "expression");
+INSERT INTO tags (name, type) VALUES ("kino", "character");
+INSERT INTO tags (name, type) VALUES ("akko", "character");
+INSERT INTO tags (name, type) VALUES ("laughing", "expression");
+INSERT INTO tags (name, type) VALUES ("pout", "expression");
+INSERT INTO tags (name, type) VALUES ("random", "expression");
+INSERT INTO tags (name, type) VALUES ("haruhi", "show");
+INSERT INTO tags (name, type) VALUES ('mii being bullied', "expression");
+INSERT INTO tags (name, type) VALUES ("sad", "expression");
+INSERT INTO tags (name, type) VALUES ("shrug", "expression");
+INSERT INTO tags (name, type) VALUES ("smug", "expression");
+INSERT INTO tags (name, type) VALUES ('jashin chan', "character");
+INSERT INTO tags (name, type) VALUES ("tohru", "character");
+INSERT INTO tags (name, type) VALUES ("kaguya", "character");
+INSERT INTO tags (name, type) VALUES ("templates", "expression");
+INSERT INTO tags (name, type) VALUES ("thinking", "expression");
+INSERT INTO tags (name, type) VALUES ("consider", "expression");
+INSERT INTO tags (name, type) VALUES ("tired", "expression");
+INSERT INTO tags (name, type) VALUES ("unamused", "expression");
+
+INSERT INTO imageTags (imageID, tagID) SELECT images.id, tags.id FROM images JOIN tags ON tags.name = "reimu"; 
+INSERT INTO imageTags (imageID, tagID) SELECT images.id, tags.id FROM images JOIN tags ON tags.name = "touhou"; 
+INSERT INTO imageTags (imageID, tagID) SELECT images.id, tags.id FROM images JOIN tags ON tags.name = "thonk" AND UPPER(images.name) LIKE UPPER('%THONK%'); 
+
+UPDATE images SET createtime = "2020-01-01 00:00:00" WHERE name LIKE ("%Thonk%");
+UPDATE images SET accesstime = "2020-01-01 00:00:00" WHERE name LIKE ("%yawn%");
+.save populatedDB
+

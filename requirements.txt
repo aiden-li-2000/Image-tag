@@ -1,0 +1,4 @@
+sqlite3 #might not have to install sqlite3?
+flask >= 2.2.2
+flask-cors >= 3.0.10
+Pillow>=9.4.0
